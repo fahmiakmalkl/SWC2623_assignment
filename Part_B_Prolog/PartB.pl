@@ -173,3 +173,6 @@ print_list([]).
 print_list([H|T]) :-
     format('  - ~w~n', [H]),
     print_list(T).
+
+% Wrapper so SWI-Prolog can call main/1 if it insists.
+main(_Arg) :- main.
