@@ -33,7 +33,7 @@ def main():
     run(["runghc", "Part_A_Haskell/PartA.hs"])
 
     # Part B: Prolog
-    run(["swipl", "-q", "-g", "main", "-t", "halt", "Part_B_Prolog/PartB.pl"])
+run(["swipl", "-q", "Part_B_Prolog/PartB.pl", "-g", "main", "-t", "halt"])
 
     # Part C: Python
     run([sys.executable, "Part_C_Python/part_c.py"])
