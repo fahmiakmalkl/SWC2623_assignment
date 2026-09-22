@@ -126,3 +126,50 @@ eligible_for_certification(Learner) :-
 % ?- eligible_for_certification(siti).
 % false.
 
+% --------------------------------------------------
+% 4. MAIN ENTRY POINT (for run_all.py)
+% --------------------------------------------------
+main :-
+    writeln('===== PART B: Prolog Module Advisory and Certification ====='),
+    nl,
+
+    writeln('[Query 1] Is Ahmad eligible for database?'),
+    ( eligible(ahmad, database) -> writeln('  Result: true') ; writeln('  Result: false') ),
+    nl,
+
+    writeln('[Query 2] Is Siti eligible for data_structures?'),
+    ( eligible(siti, data_structures) -> writeln('  Result: true') ; writeln('  Result: false') ),
+    nl,
+
+    writeln('[Query 3] Is Danial eligible for web_development?'),
+    ( eligible(danial, web_development) -> writeln('  Result: true') ; writeln('  Result: false') ),
+    nl,
+
+    writeln('[Query 4] Recommended modules for Danial:'),
+    findall(M, recommended_module(danial, M), Modules),
+    print_list(Modules),
+    nl,
+
+    writeln('[Query 5] Has Ali completed software_project?'),
+    ( certification_eligible(ali, software_project) -> writeln('  Result: true') ; writeln('  Result: false') ),
+    nl,
+
+    writeln('[Query 6] Has Siti completed software_project?'),
+    ( certification_eligible(siti, software_project) -> writeln('  Result: true') ; writeln('  Result: false') ),
+    nl,
+
+    writeln('[Query 7] Is Ali eligible for certification?'),
+    ( eligible_for_certification(ali) -> writeln('  Result: true') ; writeln('  Result: false') ),
+    nl,
+
+    writeln('[Query 8] Is Siti eligible for certification?'),
+    ( eligible_for_certification(siti) -> writeln('  Result: true') ; writeln('  Result: false') ),
+    nl,
+
+    writeln('===== END OF PART B =====').
+
+% Helper to print a list nicely
+print_list([]).
+print_list([H|T]) :-
+    format('  - ~w~n', [H]),
+    print_list(T).
