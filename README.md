@@ -59,4 +59,4 @@ Part B: Prolog
 swipl -q Part_B_Prolog/PartB.pl -g main -t halt
 
 Part C: Python
-python Part_C_Python/part_c.py
+python Part_C_Python/PartC.py
