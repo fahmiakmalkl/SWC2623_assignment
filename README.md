@@ -60,6 +60,3 @@ swipl -q Part_B_Prolog/PartB.pl -g main -t halt
 
 Part C: Python
 python Part_C_Python/part_c.py
-
-## Notes on Data Consistency
-All three parts use the exact same learner IDs (Ali, Siti, Ahmad, Nur, Danial) and module names to ensure a valid comparison across paradigms. The primary goal of Part C was to demonstrate Python's multi-paradigm capabilities (Object-Oriented and Functional Programming) rather than perfectly matching the score distributions from Part A.
